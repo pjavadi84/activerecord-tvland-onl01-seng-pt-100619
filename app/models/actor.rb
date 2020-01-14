@@ -9,7 +9,6 @@ class Actor < ActiveRecord::Base
   end
   
   def list_roles
-  # empty_array = []
     self.characters.each do |character|
       self.shows.each do |show|
       end
