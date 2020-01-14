@@ -9,15 +9,9 @@ class Actor < ActiveRecord::Base
   end
   
   def list_roles
-  # empty_array = []
-    self.characters.each do |character|
-      character.name
-  #       self.shows.each do |show|
-  #         characterandshow = "#{character.name}"+" - " +"#{show.name}"
-  #         empty_array << characterandshow
-  #       end
-  #       empty_array
-    end
+   characters.collect do |character|
+     "#{character.name} - #{character.show.name}"
+   end
   end
   
 end
